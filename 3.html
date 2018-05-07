@@ -13,42 +13,14 @@
 
   gtag('config', 'UA-117501578-1');
 </script>
+<!-- 밑에는 google jQuery 붙여 넣기(color.js에서 'a'의 반복문을 jQuery로 쉽게 해줌) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="colors.js"></script>
 </head>
 <body>
 <h1><a href="index.html">WEB</a></h1>
 <input type="button" value="night" onclick="
-var target = document.querySelector('body');
-target.style.backgroundColor='black';
-target.style.color='white';
-">
-<input type="button" value="day" onclick="
-target.style.backgroundColor='white';
-target.style.color='black';
-">
-<input type="button" value="night" onclick="
-if(this.value === 'night'){
-document.querySelector('body').style.backgroundColor='black';
-document.querySelector('body').style.color='white';
-this.value = 'day';
-
-var alist = document.querySelectorAll('a');
-var i = 0;
-while(i<alist.length){
-alist[i].style.color = 'powderblue';
-i = i +1;
-}
-} else {
-document.querySelector('body').style.backgroundColor='white';
-document.querySelector('body').style.color='black';
-this.value = 'night';
-
-var alist = document.querySelectorAll('a');
-var i = 0;
-while(i<alist.length){
-alist[i].style.color = 'blue';
-i = i +1;
-}
-}
+  nightDayHandler(this);
 ">
 <div id="grid">
 <div>
@@ -98,15 +70,7 @@ s.setAttribute('data-timestamp', +new Date());
 </div>
 </div>
 <input type="button" value="night" onclick="
-if(this.value === 'night'){
-document.querySelector('body').style.backgroundColor='black';
-document.querySelector('body').style.color='white';
-this.value = 'day';
-} else {
-document.querySelector('body').style.backgroundColor='white';
-document.querySelector('body').style.color='black';
-this.value = 'night';
-}
+  nightDayHandler(this);
 ">
 </body>
 </html>
